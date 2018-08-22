@@ -1,0 +1,10 @@
+{
+  "contracts": [
+    {
+      "vm": "plugin",
+      "format": "plugin",
+      "name": "token_factory",
+      "location": "token_factory:0.1.0"
+    }
+  ]
+}

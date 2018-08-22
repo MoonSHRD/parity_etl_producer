@@ -1,0 +1,5 @@
+chaindata/data*
+build/*
+app.*db/*
+.*idea/*
+
