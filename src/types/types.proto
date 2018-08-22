@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message TokenMeta {
+
+    string Name = 1;
+    string Symbol = 2;
+    int32 Decimals = 3;
+    int64 InitialSupply = 4;
+
+}
+
+message MapEntry {
+    string key = 1;
+    string value = 2;
+}
+
