@@ -26,7 +26,7 @@ def import_block(block_cb):
             logger.error(e, exc_info=True, extra=tx_dict)
 
 
-# @todo Нужен повторяемый тест
+# @todo Нужен повторяемый тест  для CI
 # @body в качестве источника данных можно использовать инфьюру
 def get_tx_value_transfers(transaction: Transaction):
     transfers = []
