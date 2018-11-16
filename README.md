@@ -1,4 +1,4 @@
-Так выглядит обработанная транзакция перед загрузкой в Consumer  (см пояснекния)
+Так выглядит обработанная транзакция перед загрузкой в Consumer  - доп поля описаны в вики
 
 ```json5
 
@@ -11,26 +11,15 @@
  'input': '0x338b5dea00000000000000000000000023ccc43365d9dd3882eab88f43d515208f83243000000000000000000000000000000000000000000000033d6a27492034900000',
  'nonce': 1,
  'to_address': '0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208',
-//Total - Отражает передлачу определенного ассета  - ключ либо адрес токена либо 0 для эфира - данные аггрегируется (важно колгда много внутренних вызовов) 
- 'totals': {'0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208': {'0x23ccc43365d9dd3882eab88f43d515208f832430': {'from': '0xb8fa4a1f74bc05b4a21ebb52313fc41da1853922',
-                                                                                                          'received': 15300000000000000000000,
-                                                                                                          'sent': 0,
-                                                                                                          'to': None}},
-            '0xb8fa4a1f74bc05b4a21ebb52313fc41da1853922': {'0x23ccc43365d9dd3882eab88f43d515208f832430': {'from': None,
-                                                                                                          'received': 0,
-                                                                                                          'sent': 15300000000000000000000,
-                                                                                                          'to': '0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208'}}},
+ 'totals': {},/// [WIKI](https://github.com/MoonSHRD/42/wiki/%D0%94%D0%BE%D0%BF-%D0%BF%D0%BE%D0%BB%D1%8F-%D0%B2-%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8)
  'transaction_index': 2,
 // Здесь отражен каждый трансфер ценности 
- 'transfers': [{'block_number': 6712643,
-                'from_address': '0xb8fa4a1f74bc05b4a21ebb52313fc41da1853922',
-                'to_address': '0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208',
-                'transaction_hash': '0x566ab3d39cce49d18c6767e1c47bbd81f8b3a86730d286781db6c72270a46dac',
-                'value': 15300000000000000000000,
-                'value_id': '0x23ccc43365d9dd3882eab88f43d515208f832430'}],
+ 'transfers': [],/// [WIKI](https://github.com/MoonSHRD/42/wiki/%D0%94%D0%BE%D0%BF-%D0%BF%D0%BE%D0%BB%D1%8F-%D0%B2-%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8)
  'type': 'transaction',
  'value': 0}
  ```
+ 
+ 
  
  
  
