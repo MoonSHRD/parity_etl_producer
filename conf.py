@@ -1,5 +1,6 @@
 import logging
 
+from confluent_kafka import Producer
 from eth_rpc_api import ParityEthJsonRpc
 
 
@@ -14,3 +15,5 @@ def infura_config(binder):
 def base_config(binder):
     logging.basicConfig(level=logging.INFO)
     binder.bind_to_constructor(ParityEthJsonRpc, lambda: ParityEthJsonRpc("status.moonshrd.io"))
+
+    binder.bind_to_constructor(ParityEthJsonRpc, lambda: Producer({'bootstrap.servers': 'mybroker1,mybroker2'})

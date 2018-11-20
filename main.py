@@ -1,8 +1,8 @@
 import logging
 import traceback
-from time import sleep
 
 import inject
+from py._log.log import Producer
 
 from block_inspector import BlockInspector
 from conf import base_config
@@ -12,6 +12,13 @@ from mappers.transaction_mapper import TransactionMapper
 from models.transaction import Transaction
 
 logger = logging.getLogger()
+
+
+def delivery_report(err, msg):
+    if err is not None:
+        print('Message delivery failed: {}'.format(err))
+    else:
+        print('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
 
 
 def import_block(block):
@@ -53,9 +60,14 @@ if __name__ == '__main__':
     inject.configure(base_config)
 
     inspector = BlockInspector()
+    producer = inject.attr(Producer)
+
     while True:
         block = inspector.get_next_block()
 
-        import_block(block)
+        txs = import_block()
 
-        sleep(0.02)
+        for data in txs:
+            producer.poll(0)
+            producer.produce('transactions', TransactionMapper.transaction_to_dict(data), callback=delivery_report)
+            producer.flush()
