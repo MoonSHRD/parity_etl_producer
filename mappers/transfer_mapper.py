@@ -23,7 +23,3 @@ class TransferMapper(object):
         tr.value_id = transfer['value_id']
         tr.transaction_hash = transfer['transaction_hash']
         return tr
-
-
-номер
-блока
